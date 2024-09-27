@@ -74,7 +74,11 @@ const eth: NetworkUserConfig = {
   chainId: 1,
   accounts: [process.env.KEY_ETH!],
 }
-
+const hahTestnet: NetworkUserConfig = {
+  url: 'https://rpc-testnet.hashahead.org',
+  chainId: 71204,
+  accounts: [`0x2db60b6144282af6fba8a7b8db05b268f5ed35d56b99c2be45a896f52cbc90a0`],
+};
 export default {
   networks: {
     hardhat: {
@@ -84,6 +88,7 @@ export default {
     ...(process.env.KEY_MAINNET && { bscMainnet }),
     ...(process.env.KEY_GOERLI && { goerli }),
     ...(process.env.KEY_ETH && { eth }),
+    ...('0x2db60b6144282af6fba8a7b8db05b268f5ed35d56b99c2be45a896f52cbc90a0' && { hahTestnet }),
     // mainnet: bscMainnet,
   },
   etherscan: {

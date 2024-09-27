@@ -1,15 +1,13 @@
-#!/usr/bin/env zx
-// import 'zx/globals'
-
 const networks = {
   eth: 'eth',
   goerli: 'goerli',
   bscMainnet: 'bscMainnet',
   bscTestnet: 'bscTestnet',
   hardhat: 'hardhat',
+  hahTestnet: 'hahTestnet'
 }
 
-let network = process.env.NETWORK
+let network = 'hahTestnet'
 console.log(network, 'network')
 if (!network || !networks[network]) {
   throw new Error(`env NETWORK: ${network}`)
